@@ -1,0 +1,120 @@
+body {
+  font-family: 'Arial';
+}
+
+.title_head {
+  font-size: 44pt;
+  width: 100%;
+  float: left;
+  background-color:#004c75;
+  color: #ffffff;
+}
+
+.title_text {
+  padding: 20px;
+}
+
+.menu {
+  font-size: 15pt;
+  background-color:#e6e6e6;
+  width: 100%;
+  float: left;
+}
+
+.menu_form {
+  padding: 10px;
+}
+
+.form_div {
+  float: left;
+  height: 15px;
+  padding: 10px 15px 25px 10px;
+}
+
+input {
+  font-family: "Arial";
+}
+select {
+  padding: 2pt;
+}
+
+.table {
+  width: 100%;
+  float: left;
+  font-size: 20pt;
+}
+
+.table_in {
+  padding: 20px;
+}
+
+.row {
+  width: 100%;
+  float: left;
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid rgb(47, 47, 47);
+}
+
+.column {
+  float: left;
+  padding: 0px 10px 0px 0px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.col1 {
+  width: 10%;
+}
+.col2 {
+  width: 45%;
+}
+.col3 {
+  width: 20%;
+}
+.col4 {
+  width: 20%;
+}
+
+.er_data {
+  width: 100%;
+  font-size: 18pt;
+  color: rgb(78, 78, 78);
+  text-align: center;
+  margin-top: 70px;
+  float: left;
+}
+
+@media screen and (max-width: 890px) {
+  .table {
+    font-size: 14pt;
+  }
+  .col1 {
+    width: 10%;
+  }
+  .col2 {
+    width: 40%;
+  }
+  .col3 {
+    width: 20%;
+  }
+  .col4 {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .title_head {
+    width: 650px;
+  }
+  .menu {
+    width: 650px;
+  }
+  .row {
+    width: 650px;
+  }
+  .er_data {
+    width: 650px;
+  }
+}

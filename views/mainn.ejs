@@ -1,0 +1,70 @@
+<%- include("templates/header.ejs") %>
+<div class="title_head">
+  <div class="title_text">
+    <h1>Рейсы Шереметьево</h1>
+  </div>
+</div>
+<div class="menu">
+  <div class="menu_form">
+    <form name="air" method="get" action="">
+      <div class="form_div">
+        <input type="radio" <%=(flType == 'dep')? 'checked="checked"' : '';%> name="flType" value="dep"> Вылет
+      </div>
+      <div class="form_div">
+        <input type="radio" <%=(flType == 'arr')? 'checked="checked"' : '';%> name="flType" value="arr"> Прилёт
+      </div>
+      <div class="form_div">
+        Дата: <input type="date" name="date"  value="<%=date%>">
+      </div>
+      <div class="form_div">
+        Время:
+        <select name="hour">
+          <option <%=(time == '')? 'selected': '';%>selected value></option>
+          <% for (var i = 0; i < 12; i++){%>
+            <option <%=(time == (((i*2).toString().length == 1)? ('0' + (i*2).toString()) : (i*2).toString()))? 'selected': '';%> value="<%=((i*2).toString().length == 1)? ('0' + (i*2).toString()) : (i*2).toString();%>"><%=((i*2).toString().length == 1)? ('0' + (i*2).toString()) : (i*2).toString();%>-<%=(((i*2) + 2).toString().length == 1)? ('0'+ ((i*2) + 2).toString()) : ((i*2) + 2).toString();%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="form_div">
+        Номер рейса: <input type="text" value="<%=flightNumber%>" name="flightNumber">
+      </div>
+      <div class="form_div">
+        <input type="submit" value="Поиск">
+      </div>
+    </form>
+  </div>
+</div>
+<div class="table">
+  <div class="table_in">
+    <div class="row">
+      <div class="column col1">Время</div>
+      <div class="column col2">Город</div>
+      <div class="column col3">Терминал</div>
+      <div class="column col4">Номер рейса</div>
+    </div>
+    <%if(results.length != 0){%>
+    <%for (var result in results){%>
+    <div class="row">
+      <div class="column col1">
+        <%=results[result].time%>
+      </div>
+      <div class="column bold col2">
+        <%=results[result].fromOrToAirpot%>
+      </div>
+      <div class="column col3">
+        <%=results[result].terminal%>
+      </div>
+      <div class="column bold col4">
+        <%=results[result].flightNumber%>
+      </div>
+    </div>
+    <%}%>
+    <%}else{%>
+      <div class="er_data">
+        Данные о рейсах по данным параметрам отсутствуют
+      </div>
+    <%}%>
+  </div>
+</div>
+
+<%- include("templates/footer.ejs") %>
